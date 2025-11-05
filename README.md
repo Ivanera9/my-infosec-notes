@@ -1,29 +1,20 @@
-# 🧠 My Infosec Notes
 
-Hi 👋 I’m Ivan  
-I’m learning Cybersecurity & Ethical Hacking from zero, studying 4 hours every day for 1000 days.  
-This repo will track everything I learn — commands, scripts, and notes.
+## 🗓️ Week 1 — Linux Foundations
 
----
+**Goal:** Build a solid base in Linux commands, user management, and file permissions.  
+**Focus Areas:** Navigation • User management • File handling • Permissions • Basic networking prep  
+**Duration:** 5 learning days (~4 h/day)
 
-### 🧠 Daily Notes
+| **Day** | **Topic** | **Details** |
+|:-------:|:-----------|:------------|
+| 1 | Linux Basics (intro commands) | [Read Notes](./notes/Day01-Linux-Basics.md) |
+| 2 | User Management & Groups | [Read Notes](./notes/Day02-User-Management.md) |
+| 3 | Safe Clean Shutdowns | [Read Notes](./notes/Day03-Safe-Shutdowns.md) |
+| 4 | File Permissions & Ownership | [Read Notes](./notes/Day04-File-Permissions.md) |
+| 5 | Networking Basics (IP/Ports/DNS) | [Read Notes](./notes/Day05-Networking-Basics.md) |
 
-| Day | Topic | Link |
-|-----|--------|------|
-| 1 | Linux Basics | [View Notes](./notes/Day01-Linux-Basics.md) |
-| 2 | User Management | [View Notes](./notes/Day02-User-Management.md) |
-| 3 | Safe Shutdowns | [View Notes](./notes/Day03-Safe-Shutdowns.md) |
-| 4 | File Permissions | [View Notes](./notes/Day04-File-Permissions.md) |
+**Week 1 Summary**
+- Learned how to navigate and manage files in Linux.  
+- Understood permissions, ownership, and safe shutdown.  
+- Began networking fundamentals (IP, DNS, ping).  
 
-
----
-
-### 📒 Weekly Summaries
-- Week 1 → coming soon
-
----
-
-### 📂 Structure
-- `/notes` → daily learning notes  
-- `/scripts` → small tools I build  
-- `/writeups` → practice lab summaries  
