@@ -13,7 +13,7 @@ This repo will track everything I learn — commands, scripts, and notes.
 | 2 | User Management | [View Notes](./notes/Day02-User-Management.md) |
 | 3 | Safe Shutdowns | [View Notes](./notes/Day03-Safe-Shutdowns.md) |
 | 4 | File Permissions | [View Notes](./notes/Day04-File-Permissions.md) |
-
+| 5 | Networking Basics | [View Notes](./notes/Day05-Networking-Basics.md) |
 
 ---
 
