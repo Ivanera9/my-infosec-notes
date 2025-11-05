@@ -9,7 +9,7 @@ This repo will track everything I learn — commands, scripts, and notes.
 ### 🧠 Daily Notes
 | Day | Topic | Link |
 |-----|--------|------|
-| 1 | Linux Basics | [View Notes](./Week-1/notes/Day01-Create-Kali-USB.md)
+| 1 | Linux Basics | [View Notes](./notes/Day01-Create-Kali-USB.md)
 | 2 | User Management | [View Notes](./notes/Day02-User-Management.md) |
 | 3 | Safe Shutdowns | [View Notes](./notes/Day03-Safe-Shutdowns.md) |
 | 4 | File Permissions | [View Notes](./notes/Day04-File-Permissions.md) |
