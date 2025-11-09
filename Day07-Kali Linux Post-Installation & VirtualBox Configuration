@@ -1,0 +1,90 @@
+🧠 Day 7 — Kali Linux Post-Installation & VirtualBox Configuration
+
+
+⚙️ Overview
+
+Following the base installation completed on Day 6, today’s focus was on getting Kali Linux fully operational inside VirtualBox.
+Most of the effort went into configuring the desktop environment, enabling integration features, and stabilizing performance for consistent use.
+
+🎯 Objectives
+
+Bring up the graphical interface (XFCE)
+
+Install and enable VirtualBox Guest Additions for display, clipboard, and drag-drop features
+
+Verify network connectivity and system health
+
+Optimize VM hardware allocation and performance
+
+🧩 Work Summary
+🖥️ Display Manager Fix
+
+Initially, the VM booted to a non-GUI terminal.
+To restore the graphical login screen (LightDM):
+
+sudo apt install lightdm -y
+sudo systemctl enable lightdm
+sudo systemctl start lightdm
+
+
+✅ After reboot, successfully logged into the XFCE desktop environment.
+
+💽 VirtualBox Guest Additions
+
+Inserted Guest Additions ISO, mounted, and installed essential modules:
+
+sudo apt install build-essential dkms linux-headers-$(uname -r) -y
+sudo mkdir -p /mnt/cdrom
+sudo mount /dev/cdrom /mnt/cdrom
+cd /mnt/cdrom
+sudo sh ./VBoxLinuxAdditions.run
+
+
+Verification:
+
+lsmod | grep vbox
+
+
+Output confirmed vboxguest and vboxsf modules were active.
+🟢 Clipboard and display resizing features worked as expected after reboot.
+
+⚙️ Performance Tuning
+
+Adjusted VirtualBox resource settings for smooth operation:
+
+Parameter	Setting
+RAM	4 GB
+CPU Cores	2
+Video Memory	128 MB
+Acceleration	3D Enabled
+Clipboard	Bidirectional
+
+These changes significantly improved responsiveness and graphics stability.
+
+🌐 System & Network Checks
+
+Ran key diagnostic commands:
+
+whoami
+uname -a
+ifconfig
+ping -c 3 google.com
+
+
+✅ Result:
+Network and base system fully operational; outbound connectivity verified.
+
+🧾 Outcome
+Component	Status
+XFCE Desktop	✅ Running smoothly
+Guest Additions	✅ Installed & functional
+Clipboard / Display Sync	✅ Working
+Network	✅ Stable
+VM Performance	⚡ Noticeably improved
+🧭 Reflection
+
+Expected this phase to be quick, but fine-tuning the display manager and VirtualBox integration took deeper troubleshooting.
+The process gave insight into how the virtualization layer interacts with the Linux kernel, display drivers, and modules.
+
+Toward the end of the session, the Windows host entered recovery mode, causing minor delays.
+This will be consolidated into the next log entry — covering recovery steps and continued configuration stability testing.
