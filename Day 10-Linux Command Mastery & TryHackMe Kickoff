@@ -1,0 +1,69 @@
+🧠 Day 10 — Linux Command Mastery & TryHackMe Kickoff
+
+
+⚙️ Overview
+
+After stabilizing the Kali environment and repairing repositories, today’s session was all about sharpening hands-on control over Linux and stepping into real cybersecurity learning with TryHackMe.
+
+This day was dedicated to mastering essential terminal commands and completing the introductory rooms in TryHackMe — covering offensive, defensive, and career-based cybersecurity paths.
+
+🔹 Objectives
+
+Build muscle memory for core Linux commands.
+
+Practice real terminal navigation and file manipulation.
+
+Understand command documentation and self-help methods (man, --help).
+
+Begin structured cybersecurity learning through TryHackMe.
+
+🔹 Command-Line Practice
+
+Commands practiced directly inside Kali (with practical testing on files and directories):
+
+Command	Function
+pwd	Show current working directory
+cd	Change directory
+ls	List contents of a directory
+mkdir	Create a new directory
+rmdir	Remove an empty directory
+cp	Copy files or folders
+rm	Remove files or folders
+locate	Quickly find files using the system database
+updatedb	Update file search database
+passwd	Change user password
+man	Open manual pages for any command
+
+✅ Combined commands (like cd && ls) and tested command chaining.
+✅ Practiced searching manual pages (/keyword) and navigation using q to exit.
+✅ Learned hidden file access (ls -a) and recursive removal (rm -r).
+
+🔹 TryHackMe Exploration
+
+Started with the three foundation rooms/lobbies:
+
+🕵️ Offensive Security Introduction — attacker mindset, penetration testing process.
+
+🛡️ Defensive Security Introduction — log analysis, detection, and system protection.
+
+💼 Career Pathway Overview — cybersecurity job roles and industry skill mapping.
+
+✅ Accounts configured and rooms completed successfully.
+✅ Understood the balance between red team (attack) and blue team (defense) thinking.
+
+🔹 Outcome
+
+Confident in essential Linux file navigation and system management.
+
+Command documentation and self-learning workflow established.
+
+TryHackMe platform fully set up and operational.
+
+Gained the first structured understanding of cybersecurity learning paths.
+
+🧭 Reflection
+
+This was the first true skill day — where knowledge directly translated to technical control.
+Everything from here builds on this base: every exploit, scan, and privilege escalation depends on solid terminal fluency.
+
+“The command line isn’t just a tool — it’s how hackers see the world.”
