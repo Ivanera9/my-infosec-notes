@@ -1,0 +1,113 @@
+# 🧠 Day 9 — Windows Boot & Drive Recovery (Real-World Failure)
+
+
+**Focus:** System recovery, EFI boot repair, and drive permission restoration
+
+---
+
+## ⚠️ Incident Summary
+A full system crash occurred during normal operation — Windows failed to boot, the EFI partition was corrupted, and the secondary drive (D:) became inaccessible. The problem began while using a Kali live USB with **persistence** (the USB was removed after the host screen went black). After two corruption events I switched to running Kali inside a Virtual Machine (VirtualBox).  
+Although I migrated to a VM for safety going forward, the recovery here is part of the same incident chain and is therefore relevant to my practical learning in system recovery and forensics.
+
+---
+
+## 🔍 Symptoms
+- Windows stuck in **Recovery Environment (WinRE)**  
+- `bootrec /rebuildbcd` returned **“File not found”**  
+- EFI partition unreadable (`dir Z:` → empty)  
+- Drive **D:** inaccessible (“Access Denied”)  
+- Safe Mode accessible, but permissions and ownership broken
+
+---
+
+## 🧰 Tools & Commands Used
+
+### 1️⃣ Bootloader & EFI Repair
+Accessed Command Prompt via **Advanced Options → Troubleshoot → Command Prompt**, then ran:
+
+```powershell
+bootrec /fixmbr
+bootrec /fixboot
+bootrec /scanos
+bootrec /rebuildbcd
+When rebuildbcd failed with “file not found”, manually rebuilt the EFI partition:
+
+powershell
+Copy code
+diskpart
+list volume
+select volume <EFI Volume>
+assign letter=Z
+exit
+bcdboot C:\Windows /s Z: /f UEFI
+Result: Boot configuration data recreated; system booted.
+
+2️⃣ File System Integrity Check
+Repaired corrupted file tables and directory indexes:
+
+powershell
+Copy code
+chkdsk C: /f
+chkdsk D: /f
+Result: File system repaired; no bad sectors reported.
+
+3️⃣ Drive Permission & Ownership Fix
+Drive D: remained inaccessible after repairs. Tried CLI then GUI:
+
+CLI:
+
+powershell
+Copy code
+takeown /f D:\ /r /d y
+icacls D:\ /grant administrators:F /t /c
+icacls D:\ /reset /t /c
+Partial success. Final fix via GUI:
+
+Right-click D:\ → Properties → Security → Advanced
+
+Change Owner to current user account
+
+Check Replace all child object permission entries… and apply
+
+Result: Full access restored to D: drive. A few protected system folders still showed “Access Denied” but user data and main directories were recoverable.
+
+4️⃣ BIOS & Boot Settings Validation
+Disabled Secure Boot
+
+Confirmed UEFI Mode active
+
+Kept Legacy Support disabled
+
+Result: System booted normally after restart.
+
+🧩 Key Takeaways
+EFI corruption can appear to be total system failure; bcdboot can rebuild EFI/BCD when bootrec struggles.
+
+NTFS "Access Denied" often equals broken ACLs — ownership changes restore access.
+
+GUI ownership propagation is faster on large trees than recursive CLI fixes.
+
+Using live persistence on removable media can cause host instability if the device is removed improperly — run in a VM for safer, repeatable practice.
+
+🧠 Final Outcome
+Component	Status
+Bootloader	✅ Repaired
+EFI Partition	✅ Rebuilt
+Drive D:	✅ Unlocked
+File System	✅ Repaired
+System Integrity	✅ Verified (sfc /scannow)
+
+⚙️ Core Commands Reference
+powershell
+Copy code
+bootrec /fixmbr
+bootrec /fixboot
+bootrec /rebuildbcd
+bcdboot C:\Windows /s Z: /f UEFI
+chkdsk D: /f
+takeown /f D:\ /r /d y
+icacls D:\ /grant administrators:F /t /c
+💡 Reflection
+This was a real recovery operation — not a lab exercise. The failure began during live persistence usage (improper removal after the host display went black), which forced me to adopt VirtualBox for safer tooling. Recovering the boot chain and permissions taught me more about Windows internals and NTFS ACLs than any tutorial could. This incident ties directly to my cybersecurity learning — it’s both a caution about tooling choices and a hands-on lesson in system forensics.
+
+“You don’t understand systems until you break and rebuild them.”

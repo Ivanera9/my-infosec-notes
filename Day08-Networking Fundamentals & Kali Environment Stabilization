@@ -1,0 +1,94 @@
+🧠 Day 8 — Networking Fundamentals & Kali Environment Stabilization
+
+
+⚙️ Overview
+
+After finalizing the graphical setup and VirtualBox configuration on Day 7, today’s focus shifted toward understanding the fundamentals of networking and refining the Kali Linux environment for practical, command-line-based work.
+
+The session balanced theory (how the internet and protocols work) with hands-on command practice, ensuring the system is optimized for daily cybersecurity exercises.
+
+🎯 Objectives
+
+Learn core networking concepts — TCP, UDP, IP, and routing basics
+
+Understand how data travels across the internet
+
+Practice fundamental Linux commands and shell navigation
+
+Apply final fixes to stabilize the Kali system for daily use
+
+🌐 Theoretical Learning
+🔸 TCP vs UDP
+
+Explored the key difference between connection-oriented (TCP) and connectionless (UDP) protocols.
+
+Learned their real-world use cases:
+
+TCP: Reliable communication (HTTP, HTTPS, SSH, FTP)
+
+UDP: Fast, lightweight, but less reliable (DNS, streaming, VoIP)
+
+🔸 How the Internet Works
+
+Traced how data travels from a client through routers, DNS, and remote servers.
+
+Understood how IP addresses, ports, and packets form the basis of data transfer.
+
+Learned how DNS translates domain names into IP addresses using hierarchical name resolution.
+
+💻 Practical Linux Work
+🔹 Basic Command Practice
+
+Practiced fundamental Linux commands for navigation and management inside Kali:
+
+pwd         # show current directory
+ls          # list files
+cd          # change directory
+mkdir       # create a new directory
+rm, rmdir   # remove files and folders
+cp, mv      # copy and move files
+sudo, apt   # administrative & package management commands
+
+
+Also used:
+
+man <command>   # read command manual
+<command> --help
+
+
+to learn syntax and flags interactively.
+
+🔹 Final System Fixes
+
+Cleaned and updated package repositories to ensure smooth APT functionality:
+
+sudo apt clean
+sudo apt update
+sudo apt full-upgrade -y
+
+
+Resolved shell warning and history corruption issues:
+
+mv ~/.zsh_history ~/.zsh_history.corrupt
+: > ~/.zsh_history
+
+
+Verified network and package manager stability:
+
+ping -c 3 google.com
+sudo apt install net-tools -y
+
+
+✅ Result: System now runs without shell or repository errors; apt, ping, and networking tools function correctly.
+
+🧾 Outcome
+Task	Status
+Networking concepts (TCP/UDP/IP)	✅ Understood
+Internet communication flow	✅ Reviewed
+Linux CLI proficiency	✅ Practiced
+APT & network functionality	✅ Stable
+Kali environment	⚙️ Fully functional and ready for use
+🧭 Reflection
+
+This session balanced conceptual understanding with practical reinforcement.
+Learning how TCP/UDP, DNS, and routing operate builds context for the upcoming tools in Kali — such as nmap, wireshark, and netcat.
