@@ -1,4 +1,4 @@
-2025-10-26 — Day 1: Create a Kali Live USB + BIOS Troubleshooting
+ Create a Kali Live USB + BIOS Troubleshooting
 
 Goal:
 Set up a Kali Linux Live USB and boot it successfully on my HP laptop to begin learning Linux fundamentals and system boot concepts.
