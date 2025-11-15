@@ -1,4 +1,4 @@
-# 2025-10-29 — Day 3: Safe Shutdowns, Persistence Health & Fixing APT Locks
+Day 3: Safe Shutdowns, Persistence Health & Fixing APT Locks
 
 **Goal:**  
 Learn safe shutdown practices in Kali Live Persistence mode, understand file service errors, handle interrupted updates, and maintain persistence integrity without damaging Windows partitions.
