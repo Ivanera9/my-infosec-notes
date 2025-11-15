@@ -1,4 +1,4 @@
-# 2025-10-28 — Day 2: Booting into Kali Linux Live + Persistence Setup
+Day 2: Booting into Kali Linux Live + Persistence Setup
 
 **Goal:**  
 Successfully boot into the Kali Linux Live environment (GUI), confirm system hardware compatibility, and configure USB persistence to retain data and settings between reboots.
