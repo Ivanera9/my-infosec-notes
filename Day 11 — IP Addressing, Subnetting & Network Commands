@@ -1,0 +1,115 @@
+🧠 Day 11 — IP Addressing, Subnetting & Network Commands
+
+
+
+⚙️ Overview
+
+Today was focused entirely on core networking fundamentals — the things every hacker MUST understand before touching tools like Nmap, Wireshark, ARP spoofing, or packet analysis.
+I studied IP addressing concepts, classifications, subnetting logic, default gateway behavior, and then validated everything by running actual commands inside Kali Linux.
+
+🔹 Topics Learned
+1. IP Address Basics
+
+Structure of IPv4: 32 bits → 4 octets
+
+Private vs Public IP ranges
+
+Static vs Dynamic IPs
+
+Difference between IP address, MAC address, and Hostname
+
+2. Classes of IP Addresses (A, B, C)
+
+Class A: 1.0.0.0 – 126.0.0.0 (Large networks)
+
+Class B: 128.0.0.0 – 191.255.0.0 (Medium networks)
+
+Class C: 192.0.0.0 – 223.255.255.0 (Small networks)
+
+Also learned: Class D (multicast) and Class E (experimental)
+
+3. Subnetting Fundamentals
+
+Subnet mask purpose
+
+/ notation (CIDR) — how /24, /16, /20, /30 etc. work
+
+How subnetting splits networks for security & efficiency
+
+Calculated:
+
+Network address
+
+Broadcast address
+
+Range of valid hosts
+
+(Not advanced subnetting yet — just foundation.)
+
+4. Default Gateway
+
+Learned the role of the gateway:
+
+It routes packets outside your LAN
+
+Every device forwards external traffic → Router → Internet
+
+Verified default gateway using Linux tools
+
+5. ARP (Address Resolution Protocol)
+
+Maps IP → MAC
+
+How devices discover each other on LAN
+
+Learned how ARP spoofing works in theory (no attacks performed)
+
+Ran ARP table lookup inside Kali
+
+🔹 Practical Commands Run on Kali Linux
+Check IP address & interfaces:
+ip a
+
+
+(Verified interface eth0 / wlan0 depending on VM)
+
+Check default gateway:
+ip route
+route -n
+
+ARP table:
+arp -a
+
+Network connectivity tests:
+ping -c 3 8.8.8.8
+ping -c 3 google.com
+
+Checked interface names & states:
+ip link show
+
+
+Everything executed successfully — networking on the VM is working normally.
+
+🔹 Outcome
+
+Built a correct mental model of how devices communicate in a network.
+
+Understood the absolute basics that future tools depend on.
+
+Gained confidence using ip and route commands instead of old ifconfig.
+
+Now ready for Day 12 topics like:
+
+Nmap basics
+
+OSI model deep dive
+
+ping, traceroute, netstat
+
+DHCP & DNS fundamentals
+
+🧭 Reflection
+
+Networking isn’t “fun” at first, but it’s the foundation for hacking.
+Without understanding IP, subnetting, ARP, and routes, you can’t scan networks, can’t exploit correctly, and can’t debug anything.
+Today was about building that foundation — so when I start the real tools, I actually know what’s happening behind the scenes.
