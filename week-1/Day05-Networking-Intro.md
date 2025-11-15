@@ -1,4 +1,4 @@
-# 🧠 2025-11-01 — Day 5: Networking Introduction & Realization About Learning Setup
+ Day 5: Networking Introduction & Realization About Learning Setup
 
 **Goal:**  
 Begin understanding basic networking concepts — types, devices, and transmission methods — and reflect on the repeated system corruption issues that occurred while using Kali Linux Live Persistence.  
