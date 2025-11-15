@@ -1,6 +1,6 @@
 🧠 Day 6 — OSI Model & VirtualBox Setup
 
-📅 Date: 2025-11-05
+
 🧩 Focus: Understanding the 7 Layers of Networking & Setting up a VirtualBox Environment
 
 🎯 Goal
