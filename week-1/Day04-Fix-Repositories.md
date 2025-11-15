@@ -1,4 +1,4 @@
-2025-10-30 — Day 4: Repository Fix, Source Validation & Safe Exit Automation
+ 4: Repository Fix, Source Validation & Safe Exit Automation
 🎯 Goal
 
 Repair broken sources.list configuration, resolve APT repository conflicts (file:/run/live/medium warnings), perform a full system upgrade on persistent Kali, and establish a verified safe shutdown process.
